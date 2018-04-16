@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	<changeSet id="01" author="jefferpc">
+		<createTable tableName="log" remarks="A table to contain all users">
+			<column name="id" type="int">
+				<constraints nullable="false" unique="true" primaryKey="true" />
+			</column>
+			<column name="cedula" type="varchar(255)" remarks="cédula de pa persona que ejecuto">
+				<constraints nullable="false" unique="false" />
+			</column>
+			<column name="fecha" type="DATETIME"
+				remarks="fecha y hora en la que se ejecutó">
+				<constraints nullable="false" unique="true" />
+			</column>
+			
+		</createTable>
+		<addAutoIncrement columnDataType="int" columnName="id"
+			incrementBy="1" startWith="1" tableName="log" />
+
+
+	</changeSet>
+</databaseChangeLog> 
